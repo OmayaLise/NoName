@@ -48,6 +48,7 @@ public class TaskPatrol : Node
             }
             else
             {
+                animator.SetBool("isRunning", true);
                 Vector2 direction = currentWaypoint.position - transform.position;
                 direction.Normalize();
                 rb.velocity = direction * speed;
@@ -62,18 +63,12 @@ public class TaskPatrol : Node
     {
         if (rb != null && animator != null && rb.velocity.x < 0.1f)
         {
-            animator.SetBool("isRunning", true);
             UpdateFacingDirection(Vector2.right);
         }
         else if (rb != null && animator != null && rb.velocity.x > 0.1f)
         {
-            animator.SetBool("isRunning", true);
-
             UpdateFacingDirection(Vector2.left);
-
         }
-
-
     }
 
     private void UpdateFacingDirection(Vector2 direction)

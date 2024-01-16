@@ -8,6 +8,7 @@ public abstract class BehaviorTree : MonoBehaviour
     private Node root = null;
     public Rigidbody2D rb = null;
     public Animator animator = null;   
+
     // Start is called before the first frame update
     void Start()
     {

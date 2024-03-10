@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float offsetColliderRight;
 
     private Rigidbody2D rb;
-    Animator animator;
+    private Animator animator;
 
     bool canDash = true;
 
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        controls = new PlayerControl();
+        controls = data.playerControl;
         controls.Enable();
         controls.Player.Jump.performed += ctx => StartJump();
         controls.Player.Jump.canceled += ctx => EndJump();

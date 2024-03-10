@@ -23,6 +23,11 @@ public class Player_Data : ScriptableObject
     [SerializeField] float playerDashStrenghtDefault;
     public float playerDashStrenght;
 
+    [SerializeField] float playerAttackStrenghtDefault;
+    public float playerAttackStrenght;
+
+    public PlayerControl playerControl;
+
     void OnEnable()
     {
         playerHealth = playerHealthDefault;
@@ -30,7 +35,8 @@ public class Player_Data : ScriptableObject
         playerSpeed = playerSpeedDefault;
         playerJumpStrenght = playerJumpStrenghtDefault;
         playerDashStrenght = playerDashStrenghtDefault;
-
+        playerAttackStrenght = playerAttackStrenghtDefault;
+        playerControl = new PlayerControl();
     }
 
 }
